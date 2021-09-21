@@ -1,8 +1,8 @@
 {
     "manifest_version" : 2,
     "name" : "KA Forums Extension",
-    "version" : "0.0.0",
-    "description" : "Enhances KA forums with automatic show more and post searching.",
+    "version" : "0.1.0",
+    "description" : "Enhances KA forums with automatic show more and post searching",
     "permissions": [
         "activeTab",
         "tabs",
