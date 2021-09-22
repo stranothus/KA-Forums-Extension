@@ -1,0 +1,15 @@
+#KA-forums-search {
+    border-radius: 25px;
+    border: 1px solid #909090;
+    margin: 50px 5px 25px;
+    padding: 10px 25px;
+    outline: none;
+    font-size: 1rem;
+    font-family: "lato";
+    transition : 0.1s all;
+}
+#KA-forums-search:active,
+#KA-forums-search:focus {
+    box-shadow : 0 0 5px #1865f2;
+    transition : 0.1s all;
+}

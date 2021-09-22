@@ -21,5 +21,45 @@ function showMore() {
 
     return false;
 }
-// _1f0fvyce exists and has no <div> within
+
 setInterval(showMore, 100);
+
+
+const search = document.createElement("input");
+search.id = "KA-forums-search";
+
+search.addEventListener("keyup", () => {
+    let posts = document.getElementsByClassName("_1glufx42");
+    if(posts.length) {
+        let searchVal = search.value.split(/(?<!\\),/);
+        for(let i = 0; i < posts.length; i++) {
+            let matched = false;
+            for(let e = 0; e < searchVal.length; e++) {
+                if(posts[i].textContent.match(new RegExp(searchVal[e].replace(/(\\|\+|\|\(|\)|\^|\$|\/)/g, "\\$1"), "i"))) {
+                    matched = "true";
+                }
+            }
+
+            if(matched) {
+                posts[i].style.display = "block";
+            } else {
+                posts[i].style.display = "none";
+            }
+        }
+    }
+});
+
+function initSearch() {
+    if(document.getElementsByClassName("_3p5c27i").length) {
+        clearInterval(timer)
+        document.getElementsByClassName("_3p5c27i")[0].before(search);
+
+        let observer = new MutationObserver(() => {
+            timer = setInterval(initSearch, 100);
+            observer.disconnect();
+        });
+        observer.observe(document.getElementsByClassName("_3p5c27i")[0], { childList : true });
+    }
+}
+
+var timer = setInterval(initSearch, 100);
