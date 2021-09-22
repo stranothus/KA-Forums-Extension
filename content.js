@@ -35,7 +35,7 @@ search.addEventListener("keyup", () => {
         for(let i = 0; i < posts.length; i++) {
             let matched = false;
             for(let e = 0; e < searchVal.length; e++) {
-                if(posts[i].textContent.match(new RegExp(searchVal[e].replace(/(\\|\+|\|\(|\)|\^|\$|\/)/g, "\\$1"), "i"))) {
+                if(posts[i].textContent.match(new RegExp(searchVal[e], "i"))) {
                     matched = "true";
                 }
             }
