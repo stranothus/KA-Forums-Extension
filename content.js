@@ -1,7 +1,7 @@
 var scroll = 0;
 
 function showMore() {
-    let more  = document.getElementsByClassName("_1f0fvyce");
+    let more  = [...document.getElementsByClassName("_1f0fvyce")].filter(v => !v.textContent.includes("Vote"));
     scroll = -document.documentElement.getBoundingClientRect().top;
 
     if(more.length) {
